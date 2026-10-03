@@ -1,0 +1,72 @@
+.composer {
+  flex-shrink: 0;
+  padding: 8px 24px 16px;
+}
+
+.inner {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 6px 6px 6px 18px;
+  border-radius: 24px;
+  background: var(--bg);
+  box-shadow: var(--shadow-bubble);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  max-height: 200px;
+  padding: 9px 0;
+  border: 0;
+  background: none;
+  outline: none;
+  resize: none;
+  line-height: 1.4;
+}
+
+.input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.input:focus-visible {
+  outline: none;
+}
+
+.send {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  transition:
+    background-color 0.15s,
+    opacity 0.15s,
+    transform 0.15s;
+}
+
+.send:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.send:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.send:disabled {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+@media (max-width: 720px) {
+  .composer {
+    padding: 6px 8px calc(8px + env(safe-area-inset-bottom));
+  }
+}

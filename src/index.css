@@ -1,0 +1,123 @@
+@import '@fontsource-variable/manrope';
+
+/* Палитра по мотивам web.max.ru: светлый сайдбар, серо-голубой фон ленты, сине-фиолетовый акцент. */
+:root {
+  --font: 'Manrope Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --accent: #3e5cf5;
+  --accent-hover: #3350e0;
+  --accent-soft: rgba(62, 92, 245, 0.12);
+  --brand-gradient: linear-gradient(135deg, #2f9bff 0%, #5a5bff 50%, #a23cff 100%);
+
+  --bg: #ffffff;
+  --bg-secondary: #f3f4f7;
+  --bg-hover: #f1f3f7;
+  --bg-active: #e8ecff;
+  --chat-bg: #e7ebf1;
+
+  --text: #0f1115;
+  --text-secondary: #737a86;
+  --text-tertiary: #a0a6b1;
+  --border: rgba(15, 17, 21, 0.08);
+
+  --bubble-in: #ffffff;
+  --bubble-in-text: var(--text);
+  --bubble-out: #d9e1ff;
+  --bubble-out-text: #0f1115;
+  --bubble-meta: #7c8494;
+  --bubble-out-meta: #5b6ac2;
+  --read: #3e5cf5;
+
+  --danger: #e5484d;
+  --danger-soft: rgba(229, 72, 77, 0.1);
+  --warning-soft: #fff4dc;
+  --warning-text: #8a5a00;
+
+  --radius-bubble: 18px;
+  --shadow-bubble: 0 1px 1px rgba(15, 17, 21, 0.06);
+  --shadow-card: 0 12px 40px rgba(15, 17, 21, 0.12);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #6d7fff;
+    --accent-hover: #8291ff;
+    --accent-soft: rgba(109, 127, 255, 0.16);
+
+    --bg: #17181c;
+    --bg-secondary: #202227;
+    --bg-hover: #1f2126;
+    --bg-active: #262a3d;
+    --chat-bg: #0e0f12;
+
+    --text: #eceef2;
+    --text-secondary: #8e94a0;
+    --text-tertiary: #5f6570;
+    --border: rgba(255, 255, 255, 0.07);
+
+    --bubble-in: #222429;
+    --bubble-out: #3b49d1;
+    --bubble-out-text: #ffffff;
+    --bubble-meta: #8e94a0;
+    --bubble-out-meta: rgba(255, 255, 255, 0.7);
+    --read: #ffffff;
+
+    --warning-soft: #3a2f12;
+    --warning-text: #f2c66d;
+
+    --shadow-bubble: none;
+    --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.5);
+
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--text);
+  background: var(--chat-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

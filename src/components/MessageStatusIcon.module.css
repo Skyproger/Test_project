@@ -1,0 +1,12 @@
+.icon {
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+}
+
+.icon[data-status='read'] {
+  color: var(--accent);
+}
+
+.icon[data-status='failed'] {
+  color: var(--danger);
+}

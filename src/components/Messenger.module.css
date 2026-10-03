@@ -1,0 +1,18 @@
+.layout {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(300px, 380px) 1fr;
+  overflow: hidden;
+}
+
+/* На телефоне — одна колонка: либо список чатов, либо открытый чат. */
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .layout[data-view='list'] > :nth-child(2),
+  .layout[data-view='chat'] > :nth-child(1) {
+    display: none;
+  }
+}

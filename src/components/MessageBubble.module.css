@@ -1,0 +1,98 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 8px;
+}
+
+.row[data-grouped] {
+  margin-top: 2px;
+}
+
+.row[data-out] {
+  align-items: flex-end;
+}
+
+.bubble {
+  position: relative;
+  max-width: min(560px, 78%);
+  padding: 7px 12px 7px;
+  border-radius: var(--radius-bubble);
+  background: var(--bubble-in);
+  color: var(--bubble-in-text);
+  box-shadow: var(--shadow-bubble);
+  overflow-wrap: anywhere;
+}
+
+.row[data-out] .bubble {
+  background: var(--bubble-out);
+  color: var(--bubble-out-text);
+}
+
+/* Как в MAX: нижний угол со стороны автора скруглён меньше остальных. */
+.row:not([data-out]) .bubble {
+  border-bottom-left-radius: 6px;
+}
+
+.row[data-out] .bubble {
+  border-bottom-right-radius: 6px;
+}
+
+.text {
+  white-space: pre-wrap;
+}
+
+/* Время с галочками «обтекается» последней строкой текста, как в мессенджерах. */
+.meta {
+  float: right;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin: 6px 0 -3px 10px;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--bubble-meta);
+  user-select: none;
+}
+
+.row[data-out] .meta {
+  color: var(--bubble-out-meta);
+}
+
+.meta .status {
+  color: inherit;
+}
+
+.meta .status[data-status='read'] {
+  color: var(--read);
+}
+
+.meta .status[data-status='failed'] {
+  color: var(--danger);
+}
+
+.failed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--danger);
+}
+
+.retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.retry:hover {
+  background: var(--bg-active);
+}
